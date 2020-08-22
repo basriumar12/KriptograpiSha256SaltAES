@@ -48,14 +48,14 @@ class MainActivity : AppCompatActivity() {
             val aesdekrip = aesenkrip.let { doDecrypt(aesenkrip.toString(),kunci.substring(0,kunci.length-48)) }
 
             aesenkrip = aesenkrip.let { salt(it.toString()) }
-            tv_result.text = "Hasil : $aesenkrip"
-            tv_result_decrypt.text = "Hasil decyrpt $aesdekrip"
+            tv_result.text = "Hasil enkripsi : $aesenkrip"
+            tv_result_decrypt.text = "Hasil decyrpt : $aesdekrip"
         }
 
 
     }
 
-    private fun encryptStringTosha256(email: String): String {
+     fun encryptStringTosha256(email: String): String {
         val charset = Charsets.UTF_8
         val byteArray = email.toByteArray(charset)
         val digest = MessageDigest.getInstance("SHA-256")

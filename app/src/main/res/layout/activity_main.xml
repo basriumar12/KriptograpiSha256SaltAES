@@ -7,7 +7,19 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#0C0909"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Kombinasi Algoritma \n SHA256 - AES - SALT"
+        android:textSize="25sp"
+
+        />
     <androidx.appcompat.widget.AppCompatEditText
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:layout_margin="16dp"
@@ -29,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="name"
+        android:hint="Hasil Enkripsi"
         android:id="@+id/tv_result"
 
         />
@@ -37,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="name"
+        android:hint="Hasil Dekripsi"
         android:id="@+id/tv_result_decrypt"
 
         />

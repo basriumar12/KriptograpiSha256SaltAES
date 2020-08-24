@@ -1,13 +1,15 @@
 package com.example.sha256withsalt
 
 import android.app.ProgressDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.jaredrummler.android.processes.AndroidProcesses
 import kotlinx.android.synthetic.main.activity_register.*
 import java.security.MessageDigest
+
 
 class RegisterActivity : AppCompatActivity(),InterfaceRegister {
     var presenterRegister : PresenterRegister = PresenterRegister(this,this)
@@ -17,7 +19,29 @@ class RegisterActivity : AppCompatActivity(),InterfaceRegister {
         setContentView(R.layout.activity_register)
 
         presenterRegister = PresenterRegister(this,this)
+        val processes =
+            AndroidProcesses.getRunningAppProcesses()
 
+        for (process in processes) {
+            // Get some information about the process
+            val processName = process.name
+            val stat = process.stat()
+            val pid = stat.pid
+            val parentProcessId = stat.ppid()
+            val startTime = stat.stime()
+            val policy = stat.policy()
+            val state = stat.state()
+            val statm = process.statm()
+            val totalSizeOfProcess = statm.size
+            val residentSetSize = statm.residentSetSize
+            val packageInfo = process.getPackageInfo(this, 0)
+           // val appName = packageInfo.applicationInfo.loadLabel(pm).toString()
+
+            test.text = "$pid $policy $totalSizeOfProcess" +
+                    " $residentSetSize $packageInfo $parentProcessId $startTime $state $statm"
+        }
+
+       // test.text = processes.name
 
         btn_submit.setOnClickListener {
 

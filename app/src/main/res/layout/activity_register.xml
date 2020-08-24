@@ -9,76 +9,85 @@
     tools:context=".RegisterActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Form Register"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Form Register"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_nama"
-        android:hint="Nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <androidx.appcompat.widget.AppCompatEditText
-        android:inputType="textEmailAddress"
-        android:id="@+id/edt_email"
-        android:hint="Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:hint="Nama" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:hint="No Hp"
-        android:inputType="number"
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_nohp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="No Hp"
+        android:inputType="number" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_ktp"
-        android:hint="No Identitas (KTP)"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="No Identitas (KTP)" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_tanggal_lahir"
-        android:hint="Tanggal Lahir"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Tanggal Lahir" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_alamat"
-        android:hint="Alamat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Alamat" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_pass"
-        android:hint="Password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Password" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_submit"
-        android:text="submit"
-        android:textColor="#ffff"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:text="submit"
+        android:textColor="#ffff" />
 
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/progress_circular"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="aaaa" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

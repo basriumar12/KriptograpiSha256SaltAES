@@ -17,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec
 
 class PresenterRegister(val contex: Context, val view: InterfaceRegister) {
 
-    fun saveData(
+    fun saveData256(
         name: String,
         email: String,
         alamat: String,
@@ -38,7 +38,7 @@ class PresenterRegister(val contex: Context, val view: InterfaceRegister) {
         var pass = encryptStringTosha256(pass)
 
 
-        ApiRetrofit.create().register(nama, email, alamat, ktp, noHp, tglLahir, pass)
+        ApiRetrofit.create().register256(nama, email, alamat, ktp, noHp, tglLahir, pass)
             .enqueue(object : Callback<ModelRegister> {
                 override fun onFailure(call: Call<ModelRegister>?, t: Throwable?) {
                     view.hideLoad()
@@ -51,6 +51,42 @@ class PresenterRegister(val contex: Context, val view: InterfaceRegister) {
                     response?.body()?.kode.let {
                         view.hideLoad()
                         view.hasil(nama, email, alamat, ktp, noHp, tglLahir, pass)
+                    }
+
+                }
+            })
+
+
+    }
+
+ fun saveDataNormal(
+        name: String,
+        email: String,
+        alamat: String,
+        ktp: String,
+        noHp: String,
+        tglLahir: String,
+        pass: String
+    ) {
+
+
+        view.load()
+
+
+
+        ApiRetrofit.create().registernormal(name, email, alamat, ktp, noHp, tglLahir, pass)
+            .enqueue(object : Callback<ModelRegister> {
+                override fun onFailure(call: Call<ModelRegister>?, t: Throwable?) {
+                    view.hideLoad()
+                }
+
+                override fun onResponse(
+                    call: Call<ModelRegister>?,
+                    response: Response<ModelRegister>?
+                ) {
+                    response?.body()?.kode.let {
+                        view.hideLoad()
+                        view.hasil(name, email, alamat, ktp, noHp, tglLahir, pass)
                     }
 
                 }
